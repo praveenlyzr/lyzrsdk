@@ -20,7 +20,7 @@ class FormulaGen:
             presence_penalty=0,
         )
 
-        initial_response = response.choices[0].message.content
+        initial_response = response.choices[0].message['content']
 
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
@@ -41,7 +41,7 @@ class FormulaGen:
             presence_penalty=0,
         )
 
-        final_response = response.choices[0].message.content
+        final_response = response.choices[0].message['content']
         return final_response
 
     def regular_expression(self, initial_prompt):
@@ -62,7 +62,7 @@ class FormulaGen:
             presence_penalty=0,
         )
 
-        initial_response = response.choices[0].message.content
+        initial_response = response.choices[0].message['content']
 
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
@@ -83,7 +83,7 @@ class FormulaGen:
             presence_penalty=0,
         )
 
-        final_response = response.choices[0].message.content
+        final_response = response.choices[0].message['content']
         return final_response
 
     def text_to_sql(self, initial_prompt):
@@ -104,7 +104,7 @@ class FormulaGen:
             presence_penalty=0,
         )
 
-        initial_response = response.choices[0].message.content
+        initial_response = response.choices[0].message['content']
 
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
@@ -125,5 +125,5 @@ class FormulaGen:
             presence_penalty=0,
         )
 
-        final_response = response.choices[0].message.content
+        final_response = response.choices[0].message['content']
         return final_response
